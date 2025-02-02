@@ -1,0 +1,351 @@
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+    --alert-btn-color: #DC060F;
+}
+body::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    width: 100%;
+    height: 679px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+nav {
+    background-color: var(--bg-1-color);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: space-between;
+    flex-wrap: wrap;
+}
+
+.profile {
+    display: flex;
+    width: 200px;
+    margin-left: 20px;
+
+}
+
+.profile .logo {
+    margin-top: 5px;
+    height: 70px;
+    width: 70px;
+    /* background-color: #fff; */
+}
+
+.profile .logo img {
+    height: 50px;
+    width: 50px;
+    margin-top: 6px;
+    margin-left: 18px;
+}
+
+.profile .login {
+    height: 70px;
+    width: 120px;
+    margin-left: 15px;
+    /* background-color: #ff0000; */
+}
+
+.login button {
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 110px;
+    height: 30px;
+    background-color: var(--bg-input-color);
+    border: none;
+    color: var(--bg-2-color);
+    font-size: large;
+    border-radius: 15px;
+
+}
+
+.login a {
+    text-decoration: none;
+
+}
+
+.menu {
+    width: 700px;
+    /* background-color: #fff; */
+    margin-left: 330px;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.menu .menu-item {
+    margin-left: 90px;
+}
+
+.menu-item button {
+    border: none;
+    height: 50px;
+    width: 100px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--bg-2-color);
+    opacity: 80%;
+}
+
+.menu-item button:hover {
+    border: none;
+    height: 50px;
+    width: 100px;
+    background-color: var(--bg-input-color);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--bg-2-color);
+    opacity: 100%;
+    border-radius: 15px;
+}
+
+.menu_dropdown {
+    width: 80px;
+    height: 70px;
+    /* background-color:red; */
+    margin-left: 15px;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+
+.menu_dropdown img {
+    width: 25px;
+    height: 25px;
+}
+
+.menu_dropdown .dropdown {
+    background-color: var(--bg-input-color);
+    width: 80px;
+    height: 120px;
+    margin: 2px;
+    align-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.dropdown .dropdown-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+#dropdownMenu {
+    display: none;
+}
+
+.menu_dropdown .burger-icon {
+    margin: 20px 0px 0px 20px;
+    height: 40px;
+    width: 40px;
+}
+
+/* nav */
+.top-content {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/images/bg2.jpeg);
+    display: flex;
+}
+
+.top-content .info {
+    margin: 100px 0px 0px 50px;
+    width: 600px;
+    height: 150px;
+    opacity: 100%;
+    /* background-color: red; */
+}
+
+.info h3 {
+    font-size: 30px;
+    font: weight 900px;
+    color: var(--text -color);
+}
+
+.info span {
+    font-size: 30px;
+    font: weight 900px;
+    color: var(--alert-btn-color);
+}
+
+.info h2, h3 {
+    font-size: 40px;
+    font: weight 900px;
+    color: var(--bg-2-color);
+}
+
+.top-content .info-profil {
+    /* background-color: red; */
+    width: 350px;
+    margin: 0px 0px 0px 250px;
+    height: 500px;
+}
+
+.tabel-profil .profil {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 50px 5px 15px 140px;
+}
+
+.profil img {
+    margin: 5px 0px 0px 4px;
+}
+
+.info-profil .tabel-profil {
+    width: 100%;
+    height: 50%;
+    background-color: var(--bg-input-2-color);
+    margin: 90px 0px 0px 0px;
+    padding-top: 1px;
+    border-radius: 5%;
+}
+
+.tabel-profil .profil-item {
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.profil-item p {
+    font-size: large;
+    font-weight: bold;
+    color: var(--bg-2-color);
+}
+
+.chart-info {
+    align-items: center;
+    height: 50px;
+}
+
+.chart-info h3 {
+    font-size: 30px;
+    margin: 50px 0px 50px 0px;
+    text-align: center;
+}
+
+.chart-container {
+    /* max-width: 500px;
+    max-height: 500px; */
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    margin-left: 100px;
+}
+
+#tracerChart {
+    width: 100px;
+    height: 00px;
+}
+
+.chart-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 800px;
+    height: 400px;
+    margin-left: 240px;
+    margin-top: 60px;
+}
+
+.chart-container {
+    flex: 1;
+}
+
+.chart-legend {
+    flex: 1;
+    text-align: left;
+    margin-left: 80px;
+}
+
+#legendList {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0px 0px 0px;
+}
+
+#legendList li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+#legendList-kerja {
+    list-style-type: none;
+    /* Menghilangkan bullet point */
+    padding: 0;
+    /* Menghilangkan padding default */
+    margin: 10px 0px 0px 0px;
+}
+
+#legendList-kerja li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+/* Footer styling */
+.footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: auto;
+    border-top: 3px solid #1976d2;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.social-icon-1 img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size:auto;
+}

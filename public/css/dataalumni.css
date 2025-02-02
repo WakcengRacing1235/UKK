@@ -1,0 +1,142 @@
+/* Root Variables */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+    --alert-btn-color: #DC060F;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Untuk Chrome, Safari, dan Edge */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 1200px;
+    background: var(--bg-2-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--bg-2-color);
+    text-align: center;
+}
+
+table thead {
+    background-color: var(--bg-1-color);
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background: #ffebf0;
+}
+
+/* Tombol Umum */
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    /* Warna teks default */
+}
+
+/* Tombol Primary */
+.btn-primary {
+    background-color: var(--bg-input-color);
+    border: 1px solid var(--bg-input-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-1-color);
+    border-color: var(--bg-1-color);
+    transform: scale(1.05);
+    /* Efek membesar saat hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+    /* Efek mengecil saat ditekan */
+    transition: transform 0.1s ease;
+}
+
+
+/* create */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--bg-input-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--bg-input-2-color);
+}

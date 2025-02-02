@@ -1,0 +1,208 @@
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+    --alert-btn-color: #DC060F;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Untuk Chrome, Safari, dan Edge */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+nav {
+    background-color: var(--bg-1-color);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: space-between;
+    flex-wrap: wrap;
+}
+
+.profile {
+    display: flex;
+    width: 200px;
+    margin-left: 20px;
+
+}
+
+.profile .logo {
+    margin-top: 5px;
+    height: 70px;
+    width: 70px;
+    /* background-color: #fff; */
+}
+
+.profile .logo img {
+    height: 50px;
+    width: 50px;
+    margin-top: 6px;
+    margin-left: 18px;
+}
+
+.profile .Username {
+    margin-top: 23px;
+    margin-left: 15px;
+    /* Jarak antara logo dan username */
+    font-size: 16px;
+    /* Ukuran teks */
+    font-weight: bold;
+    /* Teks lebih tebal */
+    color: var(--bg-2-color);
+    /* Warna teks */
+    background-color: var(--text-color);
+    border: var(--bg-2-color) solid 2px;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Sembunyikan teks berlebih */
+    text-overflow: ellipsis;
+    /* Tambahkan "..." jika teks terlalu panjang */
+    white-space: nowrap;
+    /* Pastikan teks tidak memotong baris */
+}
+
+.menu {
+    width: 700px;
+    /* background-color: #fff; */
+    margin-left: 330px;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.menu .menu-item {
+    margin-left: 20px;
+}
+
+.menu-item button {
+    border: none;
+    height: 50px;
+    width: 100px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--bg-2-color);
+    opacity: 80%;
+}
+
+.menu-item button:hover {
+    border: none;
+    height: 50px;
+    width: 100px;
+    background-color: var(--bg-input-color);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--bg-2-color);
+    opacity: 100%;
+    border-radius: 15px;
+}
+
+.menu_dropdown {
+    width: 80px;
+    height: 70px;
+    /* background-color:red; */
+    margin-left: 15px;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+
+.menu_dropdown img {
+    width: 25px;
+    height: 25px;
+}
+
+.menu_dropdown .dropdown {
+    background-color: var(--bg-input-color);
+    width: 80px;
+    height: 120px;
+    margin: 2px;
+    align-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.dropdown .dropdown-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.dropdown-icon img {
+    margin-left: -05px;
+    margin-bottom: 4px;
+}
+
+#dropdownMenu {
+    display: none;
+}
+
+.menu_dropdown .burger-icon {
+    margin: 20px 0px 0px 20px;
+    height: 40px;
+    width: 40px;
+}
+
+.burger-icon img {
+    margin-left: -05px;
+    margin-bottom: 4px;
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: auto;
+    border-top: 3px solid #1976d2;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.social-icon-1 img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: auto;
+}

@@ -1,0 +1,275 @@
+
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+    --alert-btn-color: #DC060F;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+
+}
+body::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+
+body {
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+/* nav */
+.top-content {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/images/bg2.jpeg);
+    display: flex;
+}
+
+.top-content .info {
+    margin: 100px 0px 0px 50px;
+    width: 600px;
+    height: 150px;
+    opacity: 100%;
+    /* background-color: red; */
+}
+
+.info h3 {
+    font-size: 30px;
+    font: weight 900px;
+    color: var(--bg-2-color);
+}
+
+.info span {
+    font-size: 30px;
+    font: weight 900px;
+    -webkit-text-stroke: 1px var(--alert-btn-color);
+    color: var(--alert-btn-color);
+}
+
+.info h2 {
+    font-size: 40px;
+    font: weight 900px;
+    color: var(--bg-2-color);
+}
+
+.info-profil {
+    background-color:transparent;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.info-profil h3 {
+    margin-bottom: 15px;
+    font-size: 42px;
+    color: var(--bg-2-color);
+}
+
+.admin-actions {
+    display: flex; /* Menyusun tombol secara horizontal */
+    flex-wrap: wrap; /* Membungkus tombol jika ruang tidak cukup */
+    gap: 15px; /* Jarak antar tombol */
+    justify-content: center; /* Pusatkan tombol */
+    padding: 20px; /* Tambahkan ruang di sekitar grup tombol */
+    background-color: #f9f9f9; /* Latar belakang area tombol */
+    border-radius: 10px; /* Sudut membulat untuk area tombol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+    width: 80%;
+    margin-left: 50px;  
+}
+
+.admin-actions button {
+    background-color:var(--bg-input-2-color); /* Warna latar tombol */
+    color:var(--text-color); /* Warna teks */
+    border: 2px solid transparent; /* Garis batas awal transparan */
+    padding: 12px 25px; /* Ruang di dalam tombol */
+    font-size: 16px; /* Ukuran teks */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    border-radius: 8px; /* Membuat sudut tombol membulat */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: all 0.3s ease; /* Efek transisi untuk hover */
+    width: 220px; /* Lebar tombol */
+    text-align: center; /* Rata tengah teks */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan tombol */
+}
+
+.admin-actions button:hover {
+    background-color: var(--bg-input-color); /* Warna latar saat hover */
+    border: 2px solid var(--bg-1-color); /* Tambahkan garis batas */
+    transform: scale(1.05); /* Sedikit perbesar tombol */
+    color: var(--bg-2-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
+}
+
+.admin-actions button:active {
+    background-color: #388e3c; /* Warna tombol saat ditekan */
+    transform: scale(0.98); /* Sedikit perkecil tombol */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Kurangi bayangan */
+}
+
+
+
+.tabel-profil .profil {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 50px 5px 15px 140px;
+}
+
+.profil img {
+    margin: 5px 0px 0px 4px;
+}
+
+.info-profil .tabel-profil {
+    width: 100%;
+    height: 50%;
+    background-color: var(--bg-input-2-color);
+    margin: 90px 0px 0px 0px;
+    padding-top: 1px;
+    border-radius: 5%;
+}
+
+.tabel-profil .profil-item {
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.profil-item p {
+    font-size: large;
+    font-weight: bold;
+    color: var(--bg-2-color);
+}
+
+.chart-info {
+    align-items: center;
+    height: 50px;
+}
+
+.chart-info h3 {
+    font-size: 30px;
+    margin: 50px 0px 50px 0px;
+    text-align: center;
+}
+
+.chart-container {
+    /* max-width: 500px;
+    max-height: 500px; */
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    margin-left: 100px;
+}
+
+#tracerChart {
+    width: 100px;
+    height: 00px;
+}
+
+.chart-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 800px;
+    height: 400px;
+    margin-left: 240px;
+    margin-top: 60px;
+}
+
+.chart-container {
+    flex: 1;
+}
+
+.chart-legend {
+    flex: 1;
+    text-align: left;
+    margin-left: 80px;
+}
+
+#legendList {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0px 0px 0px;
+}
+
+#legendList li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+#legendList-kerja {
+    list-style-type: none;
+    /* Menghilangkan bullet point */
+    padding: 0;
+    /* Menghilangkan padding default */
+    margin: 10px 0px 0px 0px;
+}
+
+#legendList-kerja li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+/* * Media Queries */ 
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-show {
+        display: flex;
+    }
+
+    .burger-icon {
+        display: block;
+    }
+
+    .top-content h2 {
+        font-size: 20px;
+    }
+
+    .top-content h3 {
+        font-size: 16px;
+    }
+
+    .chart-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-content h2 {
+        font-size: 18px;
+    }
+
+    .top-content h3 {
+        font-size: 14px;
+    }
+
+    .chart-container {
+        max-width: 300px;
+    }
+}
