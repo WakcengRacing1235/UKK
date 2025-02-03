@@ -90,19 +90,29 @@
 
         </div>
     </div>
-    {{-- <div class="chart-info">
-        <h3>Diagram Data Kampus Alumni</h3>
-    </div>
-    <div class="chart-section">
-        <div class="chart-container">
-            <canvas id="kampusChart" data-id='@json($kampusData)'></canvas>
+    <div class="testimoni-section">
+        <h3>Testimoni Alumni</h3>
+        <div class="testimoni-container">
+            @foreach($testimonis as $testimoni)
+                <div class="testimoni-card">
+                    <div class="testimoni-header">
+                        <div class="testimoni-info">
+                            <h4>{{ $testimoni->alumni->nama_depan }} {{ $testimoni->alumni->nama_belakang }}</h4>
+
+                            <p><strong>Tanggal:</strong> {{ $testimoni->tgl_testimoni }}</p>
+                        </div>
+                    </div>
+                    <div class="testimoni-body">
+                        <p>"{{ $testimoni->testimoni }}"</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="chart-legend">
-            <ul id="legendList" style="list-style: none; padding: 0; margin-top: 10px;"></ul>        </div>
-    </div> --}}
+    </div>
+
 
     <script>
-        document.getElementById('logout-btn').addEventListener('click', function(e) {
+        document.getElementById('logout-btn').addEventListener('click', function (e) {
             e.preventDefault();
             Swal.fire({
                 title: 'Apakah Admin yakin?',

@@ -73,10 +73,13 @@ nav {
 }
 
 .menu {
-    width: 700px;
+    width: 760px    ;
     /* background-color: #fff; */
-    margin-left: 330px;
+    margin-left: 530px;
+    margin-top: 10px;
     display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     align-items: center;
     align-content: space-between;
 }
@@ -94,6 +97,9 @@ nav {
     font-weight: bold;
     color: var(--bg-2-color);
     opacity: 80%;
+    display: inline-block;
+    visibility: visible;
+
 }
 
 .menu-item button:hover {

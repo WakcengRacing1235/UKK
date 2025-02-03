@@ -129,7 +129,7 @@
             <button type="submit">Login</button>
         </form>
 
-        <p>Atau</p>
+        <!-- <p>Atau</p>
         <div class="login-icons">
             <a href="">
                 <img src="{{ asset('icons/gogle.png') }}" alt="Google Login" style="width: 50px; height: auto;">
@@ -140,7 +140,7 @@
             <a href="">
                 <img src="{{ asset('icons/apple.png') }}" alt="Apple Login" style="width: 50px; height: auto;">
             </a>
-        </div>
+        </div> -->
 
 
         <div class="extra-links">

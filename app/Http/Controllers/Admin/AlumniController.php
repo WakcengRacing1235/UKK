@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumni;
+use App\Models\TracerKerja;
+use App\Models\TracerKuliah;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -77,9 +79,29 @@ class AlumniController extends Controller
      */
     public function destroy($id)
     {
+        // Temukan alumni berdasarkan id
         $alumni = Alumni::findOrFail($id);
+        $kerja = TracerKerja::where('id_alumni', $id)->first(); // Temukan TracerKerja terkait
+        $kuliah = TracerKuliah::where('id_alumni', $id)->first(); // Temukan TracerKuliah terkait
+
+        // Hapus semua testimoni yang berhubungan dengan alumni ini
+        $alumni->testimoni()->delete();  // Menghapus semua testimoni terkait
+
+        // Hapus TracerKerja dan TracerKuliah jika ada
+        if ($kerja) {
+            $kerja->delete();  // Menghapus data TracerKerja yang terkait
+        }
+
+        if ($kuliah) {
+            $kuliah->delete();  // Menghapus data TracerKuliah yang terkait
+        }
+
+        // Hapus alumni
         $alumni->delete();
 
-        return redirect()->route('admin.alumni.index')->with('success', 'Data sekolah berhasil dihapus.');
+        // Kembalikan ke halaman daftar alumni dengan pesan sukses
+        return redirect()->route('admin.alumni.index')->with('success', 'Data alumni beserta testimoninya berhasil dihapus.');
     }
+
+
 }

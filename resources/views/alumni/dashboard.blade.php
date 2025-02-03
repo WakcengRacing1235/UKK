@@ -63,5 +63,25 @@
 
     </div>
 </div>
+<div class="testimoni-section">
+    <h3>Testimoni Alumni</h3>
+    <div class="testimoni-container">
+        @foreach($testimonis as $testimoni)
+            <div class="testimoni-card">
+                <div class="testimoni-header">
+                    <div class="testimoni-info">
+                        <h4>{{ $testimoni->alumni->nama_depan }} {{ $testimoni->alumni->nama_belakang }}</h4>
+
+                        <p><strong>Tanggal:</strong> {{ $testimoni->tgl_testimoni }}</p>
+                    </div>
+                </div>
+                <div class="testimoni-body">
+                    <p>"{{ $testimoni->testimoni }}"</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+
 
 @endsection

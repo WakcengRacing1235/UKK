@@ -26,7 +26,7 @@ class ProfileController extends Controller
 
         // Jika tidak ditemukan, redirect dengan pesan error
         if (!$alumni) {
-            return redirect()->back()->with('error', 'Data tidak ditemukan.');
+            return redirect()->route('tracerstudy.create')->with('error', 'Belum memiliki Data Alumni!! silakan mengisi data');
         }
 
         // Kirim data ke view

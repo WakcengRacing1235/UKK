@@ -75,8 +75,7 @@
                     <th>ID</th>
                     <th>NISN</th>
                     <th>NIK</th>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
+                    <th>Nama Lengkap</th>
                     <th>Jenis Kelamin</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
@@ -92,8 +91,7 @@
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $alum->nisn }}</td>
                     <td>{{ $alum->nik }}</td>
-                    <td>{{ $alum->nama_depan }}</td>
-                    <td>{{ $alum->nama_belakang }}</td>
+                    <td>{{ $alum->nama_depan }} {{ $alum->nama_belakang }}</td>
                     <td>{{ $alum->jenis_kelamin }}</td>
                     <td>{{ $alum->tempat_lahir }}</td>
                     <td>{{ $alum->tgl_lahir }}</td>

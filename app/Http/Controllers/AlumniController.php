@@ -5,6 +5,7 @@ use App\Models\Alumni;
 use App\Models\KonsentrasiKeahlian;
 use App\Models\StatusAlumni;
 use App\Models\TahunLulus;
+use App\Models\Testimoni;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,8 +33,9 @@ class AlumniController extends Controller
             'tidakaktif' => $tidakaktif,
         ]);
         $alumnis = Alumni::with(['tahunLulus', 'konsentrasiKeahlian'])->where('email', Auth::user()->email)->first();
-
-        return view('alumni.dashboard', compact('alumnis', 'diagram', ));
+        $testimonis = Testimoni::with('alumni')->get();
+        
+        return view('alumni.dashboard', compact('alumnis', 'diagram', 'testimonis'));
     }
 
     /**

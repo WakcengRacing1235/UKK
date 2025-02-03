@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Alumni extends Model
 {
     use HasFactory;
- 
+
     protected $table = 'tbl_alumni';
     protected $primaryKey = 'id_alumni';
     public $incrementing = false;
@@ -43,7 +43,7 @@ class Alumni extends Model
     {
         return $this->belongsTo(KonsentrasiKeahlian::class, 'id_konsentrasi_keahlian', 'id_konsentrasi_keahlian');
     }
-    
+
 
     public function statusAlumni()
     {
@@ -59,11 +59,20 @@ class Alumni extends Model
         return $this->hasMany(TracerKuliah::class, 'id_alumni', 'id_alumni');
     }
 
-    public function user(){
-        return $this->belongsTo(User::class, 'id' , 'email','id_alumni');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id', 'email', 'id_alumni');
     }
     public function testimoni()
     {
         return $this->hasOne(Testimoni::class, 'id_alumni', 'id_alumni'); // Pastikan nama kolom sesuai dengan tabel testimoni
+    }
+    // Menambahkan penghapusan cascade
+    protected static function booted()
+    {
+        static::deleting(function ($alumni) {
+            // Menghapus semua testimoni terkait dengan alumni yang dihapus
+            $alumni->testimoni()->delete();
+        });
     }
 }

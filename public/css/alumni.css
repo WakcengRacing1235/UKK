@@ -59,12 +59,11 @@ body {
     font: weight 900px;
     color: var(--bg-2-color);
 }
-
 .top-content .info-profil {
-    /* background-color: red; */
     width: 350px;
-    margin: 0px 0px 0px 250px;
-    height: 500px;
+    margin: 0 auto; /* Centering the profile section */
+    height: auto; /* Let the height adjust based on content */
+    padding: 20px;
 }
 
 .tabel-profil .profil {
@@ -72,30 +71,32 @@ body {
     height: 60px;
     border-radius: 50%;
     background-color: #fff;
-    margin: 50px 5px 15px 140px;
+    margin: 20px auto; /* Center the profile picture */
 }
 
 .profil img {
-    margin: 5px 0px 0px 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .info-profil .tabel-profil {
     width: 100%;
-    height: 50%;
     background-color: var(--bg-input-2-color);
-    margin: 90px 0px 0px 0px;
-    padding-top: 1px;
-    border-radius: 5%;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
-    justify-items: center;
-    justify-self: center;
 }
 
 .tabel-profil .profil-item {
-    /* margin-left: 50px; */
-    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .profil-item p {
@@ -103,6 +104,52 @@ body {
     font-weight: bold;
     color: var(--bg-2-color);
     text-align: center;
+    margin: 5px 0;
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .top-content .info-profil {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .tabel-profil .profil {
+        width: 50px;
+        height: 50px;
+        margin: 20px auto;
+    }
+
+    .profil img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .profil-item p {
+        font-size: 14px; /* Slightly smaller text for mobile */
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 480px) {
+    .top-content .info-profil {
+        width: 100%;
+        margin: 0 10px;
+        padding: 10px;
+    }
+
+    .tabel-profil {
+        padding: 15px;
+    }
+
+    .tabel-profil .profil {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profil-item p {
+        font-size: 12px; /* Smaller font size for small screens */
+    }
 }
 
 .chart-info {
@@ -117,17 +164,16 @@ body {
 }
 
 .chart-container {
-    /* max-width: 500px;
-    max-height: 500px; */
     margin: 0 auto;
-    width: 250px;
+    width: 100%;
+    max-width: 400px;
     height: 250px;
     margin-left: 100px;
 }
 
 #tracerChart {
-    width: 100px;
-    height: 00px;
+    width: 100%;
+    height: 100%;
 }
 
 .chart-section {
@@ -139,10 +185,14 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 800px;
-    height: 400px;
-    margin-left: 240px;
-    margin-top: 60px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 60px; */
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .chart-container {
@@ -169,9 +219,7 @@ body {
 
 #legendList-kerja {
     list-style-type: none;
-    /* Menghilangkan bullet point */
     padding: 0;
-    /* Menghilangkan padding default */
     margin: 10px 0px 0px 0px;
 }
 
@@ -180,4 +228,116 @@ body {
     font-size: 14px;
     color: #333;
 }
+
+
+
+
+.testimoni-section {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.testimoni-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.testimoni-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.testimoni-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center; /* Menambahkan ini untuk men-center nama alumni */
+}
+
+.testimoni-info {
+    text-align: center; /* Memastikan semua teks di dalam info terpusat */
+}
+
+.testimoni-info h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimoni-info p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.testimoni-body p {
+    font-style: italic;
+    align-items: center;
+    color: #555;
+    margin-top: 10px;
+}
+
+
+/* Media Query for Small Devices */
+@media (max-width: 768px) {
+    .chart-info h3 {
+        font-size: 24px;
+        margin: 30px 0;
+    }
+
+    .chart-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        margin-left: 0;
+    }
+
+    .chart-legend {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Media Query for Extra Small Devices */
+@media (max-width: 480px) {
+    .chart-info h3 {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .chart-section {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .chart-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .chart-legend {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+    
 

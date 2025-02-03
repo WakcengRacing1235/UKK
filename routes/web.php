@@ -21,9 +21,8 @@ use App\Http\Controllers\testimoniAlumniController;
 use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index']);
+
 
 // Route untuk menuju halaman dashboard admin
 Route::middleware(['auth', 'role:admin'])->group(function () {

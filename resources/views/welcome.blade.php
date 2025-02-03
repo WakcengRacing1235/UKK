@@ -61,54 +61,48 @@
             <h3>Alumni di masa depan</h3>
         </div>
         @auth
-        <div class="info-profil">
-            <div class="tabel-profil">
-                <div class="profil">
-                    <img src="{{ asset('images/profil.png' )}}" alt="profil">
+            <div class="info-profil">
+                <div class="tabel-profil">
+                    <div class="profil">
+                        <img src="{{ asset('images/profil.png')}}" alt="profil">
+                    </div>
+                    <div class="profil-item">
+                        <p>Nama :</p>
+                    </div>
+                    <div class="profil-item">
+                        <p>Email :</p>
+                    </div>
+                    <div class="profil-item">
+                        <p>Jurusan :</p>
+                    </div>
+                    <div class="profil-item">
+                        <p>Tahun lulus :</p>
+                    </div>
                 </div>
-                <div class="profil-item">
-                    <p>Nama :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Email :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Jurusan :</p>
-                </div>
-                <div class="profil-item">
-                    <p>Tahun lulus :</p>
-                </div>
-            </div>
-            @endauth
+        @endauth
         </div>
 
     </div>
-    {{-- <div class="chart-info">
-        <h3>Diagram Data Alumni</h3>
-    </div>
-    <div class="chart-section">
-        <div class="chart-container">
-            <canvas id="tracerChart"></canvas>
-        </div>
-        <div class="chart-legend">
+    <div class="testimoni-section">
+        <h3>Testimoni Alumni</h3>
+        <div class="testimoni-container">
+            @foreach($testimonis as $testimoni)
+                <div class="testimoni-card">
+                    <div class="testimoni-header">
+                        <div class="testimoni-info">
+                            <h4>{{ $testimoni->alumni->nama_depan }} {{ $testimoni->alumni->nama_belakang }}</h4>
 
-            <ul id="legendList"></ul>
-            <p>Jumlah Alumni: 600</p>
+                            <p><strong>Tanggal:</strong> {{ $testimoni->tgl_testimoni }}</p>
+                        </div>
+                    </div>
+                    <div class="testimoni-body">
+                        <p>"{{ $testimoni->testimoni }}"</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
-    <div class="chart-info">
-        <h3>Diagram Data Pekerjaan Alumni</h3>
-    </div>
-    <div class="chart-section">
-        <div class="chart-container">
-            <canvas id="tracerChart-kerja"></canvas>
-        </div>
-        <div class="chart-legend">
 
-            <ul id="legendList-kerja"></ul>
-            <p>Jumlah Alumni: 600</p>
-        </div>
-    </div> --}}
     <script src="{{ asset('js/welcome.js') }}"></script>
     <footer class="footer">
         <div class="footer-content">

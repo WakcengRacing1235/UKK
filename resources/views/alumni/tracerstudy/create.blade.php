@@ -216,7 +216,8 @@
         <input type="text" name="akun_tiktok" maxlength="50">
 
         <label for="email">Email:</label>
-        <input type="email" name="email" required maxlength="50">
+        <input type="email" name="email" value="{{ Auth::user()->email }}" required maxlength="50" readonly>
+
 
         <label for="password">Password:</label>
         <input type="password" name="password" required minlength="8">
@@ -267,6 +268,17 @@
         Swal.fire({
             title: 'Error!',
             text: '{{ session('error') }}',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    </script>
+@endif
+
+@if (session('warning'))
+    <script>
+        Swal.fire({
+            title: 'Error!',
+            text: '{{ session('warning') }}',
             icon: 'error',
             confirmButtonText: 'OK'
         });
