@@ -73,9 +73,9 @@ nav {
 }
 
 .menu {
-    width: 760px    ;
+    width: 700px    ;
     /* background-color: #fff; */
-    margin-left: 530px;
+    margin-left: 330px;
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;

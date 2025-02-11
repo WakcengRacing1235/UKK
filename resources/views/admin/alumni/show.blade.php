@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <th>Email</th>
-                <td>{{ $alumni->email }}</td>
+                <td>{{ $alumni->email_alumni }}</td>
             </tr>
             <tr>
                 <th>Password</th>

@@ -188,7 +188,7 @@
                 <label for="id_alumni">Nama Alumni:</label>
                 <select name="id_alumni" id="id_alumni" class="select2-container" required>
                     <option value="">Pilih Alumni</option>
-                    @foreach ($alumni as $a)
+                    @foreach ($allAlumni as $a)
                         <option value="{{ $a->id_alumni }}">{{ $a->nama_depan }} {{ $a->nama_belakang }}</option>
                     @endforeach
                 </select>

@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $email = auth()->user()->email;
 
         // Cari data alumni berdasarkan email
-        $alumni = Alumni::where('email', $email)
+        $alumni = Alumni::where('email_alumni', $email)
             ->with(['tracerKuliah', 'tracerKerja'])
             ->first();
 

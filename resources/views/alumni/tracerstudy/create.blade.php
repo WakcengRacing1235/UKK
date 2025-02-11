@@ -177,7 +177,7 @@
 
         <label for="nisn">NISN:</label>
         <input type="text" name="nisn" required maxlength="20">
-
+k
         <label for="nik">NIK:</label>
         <input type="text" name="nik" required maxlength="20">
 

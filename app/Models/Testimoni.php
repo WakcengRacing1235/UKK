@@ -24,4 +24,8 @@ class Testimoni extends Model
     {
         return $this->belongsTo(Alumni::class, 'id_alumni', 'id_alumni');
     }
+    public function konsentrasiKeahlian()
+    {
+        return $this->hasMany(KonsentrasiKeahlian::class, 'id_program_keahlian', 'id_program_keahlian');
+    }
 }

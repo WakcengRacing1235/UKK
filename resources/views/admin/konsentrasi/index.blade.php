@@ -14,7 +14,7 @@
 
             height: 800px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
             margin: 0;
         }
     </style>
@@ -82,7 +82,7 @@
                 @foreach ($konsentrasiKeahlian as $item)
                     <tr>
                         <td>{{ $item->id_konsentrasi_keahlian }}</td>
-                        <td>{{ $item->id_program_keahlian }}</td>
+                        <td>{{ $item->programKeahlian->program_keahlian }}</td>
                         <td>{{ $item->kode_konsentrasi_keahlian }}</td>
                         <td>{{ $item->konsentrasi_keahlian }}</td>
                         <td>

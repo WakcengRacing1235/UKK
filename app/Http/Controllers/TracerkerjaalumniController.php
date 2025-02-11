@@ -42,30 +42,34 @@ class TracerkerjaalumniController extends Controller
     {
         // Mendapatkan email user yang sedang login
         $userEmail = auth()->user()->email;
+        // dd($userEmail);
+    
+        // Mencari data alumni berdasarkan email atau email_alumni
+        $alumni = Alumni::where(function ($query) use ($userEmail) {
+            $query->where('email', $userEmail)
+                  ->orWhere('email_alumni', $userEmail);
+        })->first();
+        // dd($alumni);
 
-        // Mencari data alumni berdasarkan email user
-        $alumni = Alumni::whereEmail($userEmail)->first();
-
-        // Periksa apakah data alumni ditemukan
+    
+        // **PERBAIKAN: Cek apakah alumni ditemukan sebelum mengakses id_alumni**
         if (!$alumni) {
             return redirect()->route('tracerstudy.create')
                 ->with('warning', 'Silakan lengkapi data alumni terlebih dahulu.');
         }
-
+    
         // Periksa apakah data tracer kerja sudah diisi
         $tracerKerja = TracerKerja::where('id_alumni', $alumni->id_alumni)->exists();
-
+    
         if ($tracerKerja) {
             return redirect()->route('alumni.dashboard')
                 ->with('success-kerja-create', 'Anda sudah mengisi data tracer kerja.');
         }
-        $alumni = Alumni::all();
+        $allAlumni = Alumni::all();
         // Jika belum mengisi tracer kerja, tampilkan form
-        return view('alumni.tracerkerja.create', compact('alumni'));
+        return view('alumni.tracerkerja.create', compact('alumni' , 'allAlumni'));
     }
-
-
-
+    
 
 
     public function store(Request $request)
@@ -86,7 +90,7 @@ class TracerkerjaalumniController extends Controller
 
         // Cari alumni berdasarkan id dan email pengguna login
         $alumni = Alumni::where('id_alumni', $request->id_alumni)
-            ->where('email', $userEmail)
+            ->where('email_alumni', $userEmail)
             ->first();
 
         // Jika tidak ditemukan, kembalikan dengan pesan error

@@ -166,3 +166,25 @@ body{
 .search-button:hover {
     background-color:var(--bg-input-2-color);
 }
+.tmbh {
+    display: flex; /* Mengaktifkan Flexbox */
+    justify-content: flex-end; /* Mengatur tombol ke kanan */
+    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
+}
+
+.tmbh a {
+    border: #000000 solid 2px;
+    border-radius: 15px;
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    text-align: center;
+    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    transition: background-color 0.3s ease; /* Menambahkan efek hover */
+}
+
+.tmbh a:hover {
+    background-color: var(--bg--1-color); /* Warna tombol saat hover */
+    color: var(--bg-2-color); /* Warna teks saat hover */
+}

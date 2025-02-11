@@ -14,22 +14,23 @@ return new class extends Migration {
             $table->id('id_alumni'); // Primary key
             $table->unsignedBigInteger('id_tahun_lulus'); // Foreign key
             $table->unsignedBigInteger('id_konsentrasi_keahlian'); // Foreign key
-            $table->unsignedBigInteger('id_status_alumni'); // Foreign key
+            $table->unsignedBigInteger('id_status_alumni')->nullable(); // Foreign key
             $table->string('nisn', 20)->unique();
             $table->string('nik', 20)->unique();
             $table->string('nama_depan', 50);
             $table->string('nama_belakang', 50)->nullable();
-            $table->string('jenis_kelamin', 10);
-            $table->string('tempat_lahir', 20);
-            $table->date('tgl_lahir');
+            $table->string('jenis_kelamin', 10)->nullable(); // Bisa dikosongkan
+            $table->string('tempat_lahir', 20)->nullable(); // Bisa dikosongkan
+            $table->date('tgl_lahir')->nullable(); // Bisa dikosongkan
             $table->string('alamat', 50)->nullable();
             $table->string('no_hp', 15)->nullable();
             $table->string('akun_fb', 50)->nullable();
             $table->string('akun_ig', 50)->nullable();
             $table->string('akun_tiktok', 50)->nullable();
-            $table->string('email', 50);
-            $table->longText('password');
-            $table->enum('status_login', ['0', '1']);
+            $table->string('email', 50)->unique(); // Tambahkan unique agar tidak ada duplikasi
+            $table->string('email_alumni')->nullable();
+            $table->string('password'); // Tidak perlu longText
+            $table->enum('status_login', ['0', '1'])->default('0'); // Default 0 untuk belum login
             $table->timestamps();
 
             // Definisi relasi foreign key
@@ -46,8 +47,6 @@ return new class extends Migration {
                 ->onDelete('cascade');
         });
     }
-
-
 
     /**
      * Reverse the migrations.

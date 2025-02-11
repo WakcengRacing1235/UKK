@@ -152,11 +152,11 @@
                 <label for="id_alumni">Nama Alumni:</label>
                 <select name="id_alumni" id="id_alumni" class="select2-container" required>
                     <option value="">Pilih Alumni</option>
-                    @foreach ($alumni as $a)
+                    @foreach ($allAlumni as $a)
                         <option value="{{ $a->id_alumni }}">{{ $a->nama_depan }} {{ $a->nama_belakang }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div>  
             <div class="form-group">
                 <label for="selected_alumni_name">Nama Alumni Terpilih:</label>
                 <input type="text" id="selected_alumni_name" class="form-control" readonly>

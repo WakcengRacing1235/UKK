@@ -32,6 +32,7 @@ class AdminController extends Controller
         // ->orderBy('tbl_testimoni.tgl_testimoni', 'desc')
         // ->get();
         $testimonis = Testimoni::with('alumni')->get();
+        $alumnis = Alumni::with([ 'konsentrasiKeahlian'])->first();
 
         // $namaKuliah = Alumni::whereHas('tracerKuliah', function ($query) {
         //     $query->select('tracer_kuliah_kampus'); // Kolom yang ingin diambil
@@ -51,4 +52,6 @@ class AdminController extends Controller
 
         return view('admin.dashboard', compact('diagram', 'kampusData','testimonis'));
     }
+
+
 }

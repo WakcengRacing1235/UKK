@@ -1,0 +1,198 @@
+/* ========== Variabel Warna ========== */
+:root {
+    --text-color: #000000;
+    --bg-input-color: #4782B2;
+    --bg-input-2-color: #70BFFF;
+    --bg-1-color: #1A2189;
+    --bg-2-color: #FFFFFF;
+    --alert-btn-color: #DC060F;
+}
+
+/* ========== Reset Default Browser ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ========== Body Styling ========== */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* ========== Container Styling ========== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--bg-2-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Heading Styling ========== */
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--bg-input-color);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px var(--text-color);
+}
+
+/* ========== Search Form Styling ========== */
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--bg-input-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--bg-input-2-color);
+}
+
+/* ========== Button Styling ========== */
+.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--bg-input-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-1-color);
+}
+
+.btn-danger {
+    background-color: var(--alert-btn-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #a1030b;
+}
+
+.btn-secondary {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* ========== Table Styling ========== */
+.table-container {
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    margin-top: 25px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-2-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--text-color);
+    white-space: nowrap; /* Pastikan tidak ada teks yang pecah */
+}
+
+.table th {
+    background-color: var(--bg-input-color);
+    color: var(--bg-2-color);
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.table tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* ========== Responsiveness ========== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .table-container {
+        overflow-x: auto; /* Aktifkan scroll di perangkat kecil */
+    }
+
+    .table th,
+    .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+.anjay{
+    margin-top: 25px;
+}

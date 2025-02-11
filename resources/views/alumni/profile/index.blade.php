@@ -31,7 +31,7 @@
                         <td>{{ $alumni->tgl_lahir }}</td>
                         <td>{{ $alumni->alamat }}</td>
                         <td>{{ $alumni->no_hp }}</td>
-                        <td>{{ $alumni->email }}</td>
+                        <td>{{ $alumni->email_alumni }}</td>
                         <td>
                             <a href="{{ route('profile.alumni', $alumni->id_alumni) }}" class="btn btn-danger">Edit</a>
                         </td>

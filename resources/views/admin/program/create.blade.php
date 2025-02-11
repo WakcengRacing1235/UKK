@@ -13,7 +13,7 @@
             --bg-color: #f9f9f9;
             --form-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             --label-color: #333;
-            --input-border: #ccc;
+            --input-border: #ccc; 
             --input-focus: #4CAF50;
             --button-bg: #007BFF;
             --button-hover: #0056b3;

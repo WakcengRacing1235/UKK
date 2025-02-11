@@ -79,9 +79,9 @@ nav {
 }
 
 .menu {
-    width: 700px;
+    width: 700px    ;
     /* background-color: #fff; */
-    margin-left: 530px;
+    margin-left: 330px;
     display: flex;
     align-items: center;
     align-content: space-between;
@@ -98,7 +98,7 @@ nav {
     background-color: transparent;
     font-size: 15px;
     font-weight: bold;
-    color: var(--bg-2-color);
+    color: var(--bg-2-color); 
     opacity: 80%;
 }
 
@@ -186,7 +186,13 @@ nav {
     color: var(--alert-btn-color);
 }
 
-.info h2, h3 {
+.info h2 {
+    font-size: 40px;
+    font: weight 900px;
+    color: var(--bg-2-color);
+}
+
+.info h3 {
     font-size: 40px;
     font: weight 900px;
     color: var(--bg-2-color);
@@ -306,6 +312,66 @@ nav {
     font-size: 14px;
     color: #333;
 }
+
+
+.testimoni-section {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.testimoni-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.testimoni-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.testimoni-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center; /* Menambahkan ini untuk men-center nama alumni */
+}
+
+.testimoni-info {
+    text-align: center; /* Memastikan semua teks di dalam info terpusat */
+}
+
+.testimoni-info h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimoni-info p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.testimoni-body p {
+    font-style: italic;
+    text-align:  center;
+    color: #555;
+    margin-top: 10px;
+}
+
 /* Footer styling */
 .footer {
     background-color: #1a237e;

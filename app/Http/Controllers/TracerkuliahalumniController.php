@@ -22,24 +22,26 @@ class TracerkuliahalumniController extends Controller
     public function create()
     {
         $userEmail = auth()->user()->email;
-        $alumni = Alumni::whereEmail($userEmail)->first();
-    
+        $alumni = Alumni::where(function ($query) use ($userEmail) {
+            $query->where('email', $userEmail)
+                ->orWhere('email_alumni', $userEmail);
+        })->first();
         if (!$alumni) {
             return redirect()->route('tracerstudy.create')
                 ->with('warning', 'Silakan lengkapi data alumni terlebih dahulu.');
         }
-    
+
         $tracerKuliah = TracerKuliah::where('id_alumni', $alumni->id_alumni)->exists();
-    
+
         if ($tracerKuliah) {
             return redirect()->route('alumni.dashboard')
                 ->with('success-kuliah-create', 'Anda sudah mengisi data tracer kuliah.');
         }
 
-        $alumni = Alumni::all();
-        return view('alumni.tracerkuliah.create', compact('alumni'));
+        $allAlumni = Alumni::all();
+        return view('alumni.tracerkuliah.create', compact('alumni' , 'allAlumni'));
     }
-    
+
 
 
     public function store(Request $request)
@@ -57,7 +59,7 @@ class TracerkuliahalumniController extends Controller
 
         // Cari alumni berdasarkan id dan email pengguna login
         $alumni = Alumni::where('id_alumni', $request->id_alumni)
-            ->where('email', $userEmail)
+            ->where('email_alumni', $userEmail)
             ->first();
 
         // Jika tidak ditemukan, kembalikan dengan pesan error

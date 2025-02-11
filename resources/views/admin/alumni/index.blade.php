@@ -62,6 +62,19 @@
     </nav>
     
     <div class="container">
+        <div class="tmbh">
+
+            <a href="{{ route('admin.alumni.create')}}"> Tambah Data Alumni</a>
+        </div>
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sukses!',
+                    text: '{{ session('success') }}',
+                });
+            </script>
+        @endif
         <!-- Form Pencarian -->
         <h2>Data Alumni</h2>
         <form action="{{ route('admin.alumni.index') }}" method="GET" class="search-form">
@@ -81,7 +94,8 @@
                     <th>Tanggal Lahir</th>
                     <th>Alamat</th>
                     <th>No. HP</th>
-                    <th>Email</th>
+                    <th>Email Admin</th>
+                    <th>Email Alumni</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -98,6 +112,7 @@
                     <td>{{ $alum->alamat }}</td>
                     <td>{{ $alum->no_hp }}</td>
                     <td>{{ $alum->email }}</td>
+                    <td>{{ $alum->email_alumni }}</td>
                     <td>
                         <a href="{{ route('alumni.show', $alum->id_alumni) }}" class="btn btn-primary">Detail</a>
                         <form action="{{ route('alumni.destroy', $alum->id_alumni) }}" method="POST" >

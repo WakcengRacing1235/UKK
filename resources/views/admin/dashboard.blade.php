@@ -30,10 +30,10 @@
                 <button onclick="window.location='{{ route('admin.alumni.index') }}';">Data Alumni</button>
             </div>
             <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Tracer Kuliah</button>
+                <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Data Kuliah</button>
             </div>
             <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>
+                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Data Kerja</button>
             </div>
             <div class="menu-item">
                 <button onclick="window.location='{{ route('testimoni.index') }}';">Testimoni</button>
@@ -98,6 +98,7 @@
                     <div class="testimoni-header">
                         <div class="testimoni-info">
                             <h4>{{ $testimoni->alumni->nama_depan }} {{ $testimoni->alumni->nama_belakang }}</h4>
+                            {{-- <h4>{{ $testimoni->konsentrasiKeahlian->konsentrasi_keahlian}}</h4> --}}
 
                             <p><strong>Tanggal:</strong> {{ $testimoni->tgl_testimoni }}</p>
                         </div>

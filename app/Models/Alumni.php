@@ -30,6 +30,7 @@ class Alumni extends Model
         'akun_ig',
         'akun_tiktok',
         'email',
+        'email_alumni',
         'password',
         'status_login'
     ];

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAlumniControllers;
 use App\Http\Controllers\admin\AlumniController as AdminAlumniController;
 use App\Http\Controllers\Admin\BidangKeahlianController;
 use App\Http\Controllers\Admin\KonsentrasiKeahlianController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\TracerkerjaalumniController;
 use App\Http\Controllers\TracerkuliahalumniController;
 use App\Http\Controllers\testimoniAlumniController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index']);
@@ -85,8 +87,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
             ]);
     });
 
-    Route::prefix('admin/dataAlumni')->group(function () {
+    Route::prefix('admin/Alumni')->group(function () {
         Route::get('/', [AdminAlumniController::class, 'index'])->name('admin.alumni.index');
+        Route::get('/create', [AdminAlumniControllers::class, 'create'])->name('admin.alumni.create');
+        Route::post('/alumni/store', [AdminAlumniControllers::class, 'store'])->name('admin.alumni.store');
         Route::get('detail/{id}', [AdminAlumniController::class, 'show'])->name('alumni.show');
         Route::delete('hapus    /{id}', [AdminAlumniController::class, 'destroy'])->name('alumni.destroy');
     });
@@ -116,6 +120,10 @@ Route::middleware(['auth', 'role:alumni'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('alumni.profile.index');
 
     //Route untuk menuju TracerStudy create 
+    Route::get('/alumni/search', [AlumniController::class, 'search'])->name('alumni.tracerstudy.search');
+    Route::get('/alumni/fill/{id}', [AlumniController::class, 'fillData'])->name('alumni.fillData');
+    Route::post('/alumni/fill/{id}', [AlumniController::class, 'storeFilledData'])->name('alumni.tracerstudy.storeFilledData');
+
     Route::get('/alumni/create', [AlumniController::class, 'create'])->name('tracerstudy.create');
     Route::post('/alumni', [AlumniController::class, 'store'])->name('alumni.store');
 

@@ -16,9 +16,14 @@
         <form action="{{ route('konsentrasi.store') }}" method="POST">
             @csrf
 
-            <div>
-                <label for="id_program_keahlian">ID Program Keahlian</label>
-                <input type="number" id="id_program_keahlian" name="id_program_keahlian" required>
+            <div >
+                <label for="id_program_keahlian">Program Keahlian</label>
+                <select name="id_program_keahlian" id="id_program_keahlian" required>
+                    <option value="" disabled selected>Pilih Program Keahlian</option>
+                    @foreach ($programKeahlian as $bidang)
+                        <option value="{{ $bidang->id_program_keahlian }}">{{ $bidang->program_keahlian }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div>
@@ -29,7 +34,7 @@
             <div>
                 <label for="konsentrasi_keahlian">Nama Konsentrasi</label>
                 <input type="text" id="konsentrasi_keahlian" name="konsentrasi_keahlian" required>
-            </div>
+            </div> 
 
             <button type="submit">Simpan</button>
         </form>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumni;
+use App\Models\KonsentrasiKeahlian;
+use App\Models\TahunLulus;
 use App\Models\TracerKerja;
 use App\Models\TracerKuliah;
 use Illuminate\Http\Request;
@@ -36,16 +38,35 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        //
+        $tahunLulus = TahunLulus::all();
+        $konsentrasiKeahlian = KonsentrasiKeahlian::all();
+
+        return view('admin.alumni.create', compact('tahunLulus', 'konsentrasiKeahlian'));
     }
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nisn' => 'required|numeric|unique:tbl_alumni,nisn',
+            'nik' => 'required|numeric|unique:tbl_alumni,nik',
+            'id_tahun_lulus' => 'required|exists:tbl_tahun_lulus,id_tahun_lulus',
+            'id_konsentrasi_keahlian' => 'required|exists:tbl_konsentrasi_keahlian,id_konsentrasi_keahlian',
+        ]);
+
+        Alumni::create([
+            'nisn' => $request->nisn,
+            'nik' => $request->nik,
+            'id_tahun_lulus' => $request->id_tahun_lulus,
+            'id_konsentrasi_keahlian' => $request->id_konsentrasi_keahlian,
+        ]);
+
+        return redirect()->route('admin.alumni.index')->with('success', 'Data alumni berhasil ditambahkan');
     }
+
 
     /**
      * Display the specified resource.
